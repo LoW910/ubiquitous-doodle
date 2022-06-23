@@ -12,13 +12,14 @@ export class CustomValidators{
   static asyncInvalidProjectName(control: FormControl): Promise<any> | Observable<any> {
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
-        if (control.value === 'Test') {
+        if (control.value === 'Testproject') {
           resolve({'invalidProjectName':true});
         } else {
           resolve(null);
         }
       }, 2000);
     })
+    return promise;
   }
 
 
